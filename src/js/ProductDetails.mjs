@@ -26,7 +26,7 @@ export default class ProductDetails {
     cartItems.push(this.product);
     setLocalStorage("so-cart", cartItems);
 
-    updateCartCount();
+    // updateCartCount();
   }
 
   renderProductDetails() {

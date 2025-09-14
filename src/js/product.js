@@ -11,7 +11,7 @@ const productID = getParam("product");
 const product = new ProductDetails(productID, dataSource);
 product.init();
 
-updateCartCount();
+// updateCartCount();
 
 // // add to cart button event handler
 // async function addToCartHandler(e) {

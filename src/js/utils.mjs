@@ -38,13 +38,13 @@ export function renderListWithTemplate(template, parentElement, list, position =
   }
   parentElement.insertAdjacentHTML(position, htmlStrings.join(""));
 }
-export function updateCartCount() {
-  const cartItems = getLocalStorage("so-cart") || []; 
-  const cartCountElement = document.querySelector(".cart-count");
+// export function updateCartCount() {
+//   const cartItems = getLocalStorage("so-cart") || []; 
+//   const cartCountElement = document.querySelector(".cart-count");
 
-  if (cartCountElement) {
-    cartCountElement.textContent = cartItems.length;
-  }
+//   if (cartCountElement) {
+//     cartCountElement.textContent = cartItems.length;
+//   }
 
-  updateCartCount ();
-}
+//   updateCartCount ();
+// }
