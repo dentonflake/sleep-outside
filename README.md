@@ -2,7 +2,7 @@
 ## WDD 330 - Web Frontend Development II
 
 ### Deployed Link
-- https://strong-shortbread-edda77.netlify.app/
+- https://voluble-pudding-27322c.netlify.app/
 
 ### ⛺ SleepOutside Starter Code
 
