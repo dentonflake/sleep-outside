@@ -6,7 +6,16 @@ import { getLocalStorage, updateCartCount } from "./utils.mjs";
 function renderCartContents() {
   const cartItems = getLocalStorage("so-cart");
   const htmlItems = cartItems.map((item) => cartItemTemplate(item));
+
   document.querySelector(".product-list").innerHTML = htmlItems.join("");
+
+  if (cartItems.length) {
+
+    const footer = document.querySelector(".cart-footer")
+    footer.classList.toggle("hide");
+
+    document.querySelector(".cart-total").textContent = `Total: $${cartItems.reduce((acc, item) => acc + item.ListPrice, 0)}`
+  }
 }
 
 
@@ -30,4 +39,4 @@ function cartItemTemplate(item) {
 }
 
 renderCartContents();
-updateCartCount ();
+updateCartCount();  
