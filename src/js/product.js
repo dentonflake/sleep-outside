@@ -1,7 +1,8 @@
-import { getParam } from "./utils.mjs";
+import { getParam, loadHeaderFooter } from "./utils.mjs";
 import ProductData from "./ProductData.mjs";
 import ProductDetails from "./ProductDetails.mjs";
-import { updateCartCount } from "./utils.mjs";
+
+// import { updateCartCount } from "./utils.mjs";
 
 
 
@@ -11,7 +12,9 @@ const productID = getParam("product");
 const product = new ProductDetails(productID, dataSource);
 product.init();
 
-updateCartCount();
+loadHeaderFooter();
+
+// updateCartCount();
 
 // // add to cart button event handler
 // async function addToCartHandler(e) {
