@@ -40,7 +40,7 @@ export function renderListWithTemplate(template, parentElement, list, position =
 }
 
 export function updateCartCount() {
-  const cartItems = getLocalStorage("so-cart") || []; 
+  const cartItems = getLocalStorage("so-cart") || [];
   const cartCountElement = document.querySelector(".cart-count");
 
   if (cartCountElement) {
@@ -52,7 +52,7 @@ export function renderWithTemplate(template, parentElement, data, callback) {
 
   parentElement.innerHTML = template;
 
-  if(callback) {
+  if (callback) {
     callback(data);
   }
 }
@@ -63,7 +63,7 @@ export async function loadTemplate(path) {
   return template;
 }
 
-export async function loadHeaderFooter(){
+export async function loadHeaderFooter() {
 
   const headerTemplate = await loadTemplate("../partials/header.html");
   const footerTemplate = await loadTemplate("../partials/footer.html");
@@ -71,6 +71,34 @@ export async function loadHeaderFooter(){
   const headerElement = document.querySelector("#main-header");
   const footerElement = document.querySelector("#main-footer");
 
-  renderWithTemplate(headerTemplate, headerElement, null, updateCartCount);
+  renderWithTemplate(headerTemplate, headerElement, null, () => {
+    updateCartCount()
+    getBreadCrumbs()
+  });
+
   renderWithTemplate(footerTemplate, footerElement);
+}
+
+export function getBreadCrumbs() {
+  const url = new URL(window.location.href);
+
+  const parts = url.pathname
+    .split("/")
+    .filter(Boolean)
+    .filter((p) => p.toLowerCase() !== "index.html");
+
+  const path = parts.reduce((acc, part, i) => {
+
+    // build cumulative href
+    const href = "/" + parts.slice(0, i + 1).join("/") + "/";
+
+    const crumb = i === parts.length - 1
+      ? `<span>${part}</span>`
+      : `<a href="${href}">${part}</a>`;
+
+    return acc + " > " + crumb;
+
+  }, `<a href="/">Home</a>`);
+
+  if (parts.length) document.querySelector("#breadcrumbs").innerHTML = path
 }
