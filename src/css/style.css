@@ -257,6 +257,37 @@ button {
   width: 100%;
 }
 
+/* "Start W03 Individual Activity: Expand Inventory" */
+/* Styles for the category list on the main page */
+.product-grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; 
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 10px; 
+  text-align: center;
+}
+
+.product-grid li {
+  width: 150px; 
+}
+
+.product-grid a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+}
+
+.product-grid img {
+  width: 100px; 
+  height: auto;
+  margin-bottom: 8px; 
+}
+
+/* "End W03 Individual Activity: Expand Inventory" */
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;
