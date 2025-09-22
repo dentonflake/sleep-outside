@@ -91,7 +91,7 @@ p {
   margin-top: -1.3em;
 }
 
-.logo--square > div {
+.logo--square>div {
   margin-top: -1.7em;
 }
 
@@ -113,6 +113,19 @@ button {
 
 .divider {
   border-bottom: 2px solid var(--primary-color);
+}
+
+.categoryIcons {
+  background-color: rgb(240, 238, 238);
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+}
+
+.categoryIcons .icon {
+  text-decoration: none;
+  color: #303030;
+  margin: 2rem 0;
 }
 
 /* End utility classes */
