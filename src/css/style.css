@@ -286,6 +286,24 @@ button {
   margin-bottom: 8px; 
 }
 
+.newsletter {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+}
+
+.newsletter form {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding: 1rem;
+}
+
+.newsletter form input {
+  width: 50%;
+  margin-left: 1rem;
+}
+
 /* "End W03 Individual Activity: Expand Inventory" */
 
 @media screen and (min-width: 500px) {
