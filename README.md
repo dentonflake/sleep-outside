@@ -2,7 +2,7 @@
 ## WDD 330 - Web Frontend Development II
 
 ### Deployed Link
-- https://voluble-pudding-27322c.netlify.app/
+- https://lustrous-alfajores-5ba05b.netlify.app/
 
 ### ⛺ SleepOutside Starter Code
 
