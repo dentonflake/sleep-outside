@@ -115,6 +115,14 @@ button {
   border-bottom: 2px solid var(--primary-color);
 }
 
+.discount {
+  background-color: rgb(82, 40, 40);
+  padding: 8px;
+  color: white;
+  border-radius: 5px;
+}
+
+
 /* End utility classes */
 
 /* Cart icon styles */
