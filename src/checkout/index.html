@@ -26,21 +26,20 @@
 
         <fieldset>
           <P class="title"> ADDRESS </P>
-          <label> Street Address * <input type="text" id="camp" name="address" required
-              pattern="[A-Za-z0-9]{8,}"></label>
-          <label> City * <input type="text" id="camp" name="city" required pattern="[A-Za-z0-9]{8,}"></label>
+          <label> Street Address * <input type="text" id="camp" name="address" required></label>
+          <label> City * <input type="text" id="camp" name="city" required></label>
           <label> State * <input type="text" id="camp" name="state" required pattern="[A-Za-z0-9]{8,}"></label>
           <label> Zip Code * <input type="number" id="camp" name="zipcode" required pattern="[A-Za-z0-9]{8,}"></label>
 
         </fieldset>
         <fieldset>
-          <P class="title"> ADDRESS </P>
-          <label> Credit Card Number * <input type="number" id="camp" name="creditCardNumber" required
-              pattern="[0-9]+"></label>
-          <label> Expiration Date * <input type="number" id="camp" name="expirationDate" required
-              pattern="[0-9]+"></label>
-          <label> Security Code * <input type="number" id="camp" name="securityCode" required maxlength="3>"
-              pattern="[0-9]+"></label>
+          <P class="title"> PAYMENT </P>
+          <label> Credit Card Number * <input id="carNumber" type="text" inputmode="numeric" name="creditCardNumber"
+              required pattern="\d{16}" placeholder="1234123412341234" value="1234123412341234"></label>
+          <label> Expiration Date (MM/YY) * <input id="expiration" type="text" inputmode="numeric" name="expirationDate"
+              required pattern="^(0[1-9]|1[0-2])\/\d{2}$" value="12/30"></label>
+          <label> Security Code * <input id="secCode" type="text" inputmode="numeric" name="securityCode" required
+              maxlength="3>" pattern="\d{3}" placeholder="123" value="123"> </label>
         </fieldset>
         </div>
 

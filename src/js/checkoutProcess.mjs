@@ -1,4 +1,5 @@
 import { getLocalStorage } from "./utils.mjs";
+import ExternalServices from "./ExternalServices.mjs";
 
 export default class CheckoutProcess {
 
@@ -10,7 +11,20 @@ export default class CheckoutProcess {
     this.shipping = 0;
     this.tax = 0;
     this.orderTotal = 0;
-    this.checkoutbutton = "#checkoutButton";
+
+    this.services = null;
+
+  }
+  packageItems(items) {
+
+    return items.map(item => {
+      return {
+        id: item.Id,
+        name: item.Name,
+        price: item.FinalPrice,
+        quantity: item.quantity || 1
+      };
+    });
   }
 
   init() {
@@ -67,5 +81,24 @@ export default class CheckoutProcess {
 
   }
 
+  async checkout(form) {
+    // 1. Obtener los datos del formulario
+    const formData = new FormData(form);
+
+    // 2. Convertir el FormData a un objeto normal
+    const orderData = Object.fromEntries(formData.entries());
+
+    // 3. Agregar info adicional que no está en el form
+    orderData.orderDate = new Date().toISOString();
+    orderData.orderTotal = this.orderTotal.toFixed(2);
+    orderData.tax = this.tax.toFixed(2);
+    orderData.shipping = this.shipping;
+    orderData.items = this.packageItems(this.list);
+
+    // 4. Mostrar en consola para verificar
+    console.log("Objeto del pedido listo:", orderData);
+
+    //   
+  }
 
 }
