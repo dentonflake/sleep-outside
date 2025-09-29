@@ -18,33 +18,33 @@
       <form method="get" action="record.html" id="f1" class="f1">
         <fieldset>
           <P class="title"> CUSTOMER NAME </P>
-          <label>First Name * <input type="text" id="camp" name="fname" required></label>
+          <label class="camp">First Name * <input type="text" id="camp" name="fname" required></label>
 
-          <label>Last Name * <input type="text" id="camp" name="lname" required pattern="[A-Za-z0-9]{8,}">
+          <label class="camp">Last Name * <input type="text" id="camp" name="lname" required pattern="[A-Za-z0-9]{8,}">
           </label>
         </fieldset>
 
         <fieldset>
           <P class="title"> ADDRESS </P>
-          <label> Street Address * <input type="text" id="camp" name="address" required></label>
-          <label> City * <input type="text" id="camp" name="city" required></label>
-          <label> State * <input type="text" id="camp" name="state" required pattern="[A-Za-z0-9]{8,}"></label>
-          <label> Zip Code * <input type="number" id="camp" name="zipcode" required pattern="[A-Za-z0-9]{8,}"></label>
+          <label class="camp"> Street Address * <input type="text" id="camp" name="address" required></label>
+          <label class="camp"> City * <input type="text" id="camp" name="city" required></label>
+          <label class="camp"> State * <input type="text" id="camp" name="state" required pattern="[A-Za-z0-9]{8,}"></label>
+          <label class="camp"> Zip Code * <input type="number" id="camp" name="zipcode" required pattern="[A-Za-z0-9]{8,}"></label>
 
         </fieldset>
         <fieldset>
           <P class="title"> PAYMENT </P>
-          <label> Credit Card Number * <input id="carNumber" type="text" inputmode="numeric" name="creditCardNumber"
+          <label class="camp"> Credit Card Number * <input id="carNumber" type="text" inputmode="numeric" name="creditCardNumber"
               required pattern="\d{16}" placeholder="1234123412341234" value="1234123412341234"></label>
-          <label> Expiration Date (MM/YY) * <input id="expiration" type="text" inputmode="numeric" name="expirationDate"
+          <label class="camp"> Expiration Date (MM/YY) * <input id="expiration" type="text" inputmode="numeric" name="expirationDate"
               required pattern="^(0[1-9]|1[0-2])\/\d{2}$" value="12/30"></label>
-          <label> Security Code * <input id="secCode" type="text" inputmode="numeric" name="securityCode" required
+          <label class="camp"> Security Code * <input id="secCode" type="text" inputmode="numeric" name="securityCode" required
               maxlength="3>" pattern="\d{3}" placeholder="123" value="123"> </label>
         </fieldset>
         </div>
 
-        <input type="submit" value="CHECKOUT">
-        <section class="sumary">
+        <input class = "submit" type="submit" value="CHECKOUT">
+        <fieldset class="sumary">
           <h3>ORDER SUMMARY</h3>
           <h4>Subtotal<span id="subtotal"> </span></h4>
           <h4>Tax <span id="tax">$0.00</span></h4>
@@ -54,7 +54,7 @@
           <h4>ORDER TOTAL <span id="total">$0.00</span></h4>
           </h4>
 
-        </section>
+        </fieldset>
 
       </form>
 
