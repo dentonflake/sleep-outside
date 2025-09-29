@@ -1,4 +1,4 @@
-import { loadHeaderFooter, getParam } from "./utils.mjs";
+import { loadHeaderFooter, getParam} from "./utils.mjs";
 import ProductData from "./ProductData.mjs";
 import ProductList from "./ProductList.mjs";
 
@@ -12,3 +12,17 @@ const element = document.querySelector(".product-list");
 const listing = new ProductList(category, dataSource, element);
 
 listing.init();
+
+const sortElement = document.querySelector("#sort");
+sortElement.addEventListener("change", (event) =>{
+    const value = event.target.value;
+    let sortedList = [...listing.list];
+
+    if (value === "name") {
+        sortedList.sort((a, b) => a.Name.localeCompare (b.Name));
+    } else if(value === "price"){
+        sortedList.sort((a, b) => a.FinalPrice - b.FinalPrice);
+    }
+    
+    listing.renderList(sortedList);
+});
