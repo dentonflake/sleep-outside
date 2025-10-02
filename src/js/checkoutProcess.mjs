@@ -81,6 +81,7 @@ export default class CheckoutProcess {
 
   }
 
+
   async checkout(form) {
     // 1. Obtener los datos del formulario
     const formData = new FormData(form);
@@ -97,6 +98,22 @@ export default class CheckoutProcess {
 
     // 4. Mostrar en consola para verificar
     console.log("Objeto del pedido listo:", orderData);
+    try {
+      const result = await this.services.checkout(orderData);
+      console.log("Server Answer:", result);
+      //alert("Order sent successfully");
+
+      localStorage.removeItem(this.key);
+      this.list = [];
+      //this.renderOrderSummary();
+      window.location.href = "./cart/success.html"
+
+    } catch (err) {
+      console.error("Error enviado por el servidor:", err);
+      alert("There was a problem sending your order");
+
+    }
+
 
     //   
   }
