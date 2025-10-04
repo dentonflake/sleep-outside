@@ -115,6 +115,14 @@ button {
   border-bottom: 2px solid var(--primary-color);
 }
 
+.discount {
+  background-color: rgb(82, 40, 40);
+  padding: 8px;
+  color: white;
+  border-radius: 5px;
+}
+
+
 /* End utility classes */
 
 /* Cart icon styles */
@@ -328,17 +336,85 @@ footer {
 }
 
 
-/* style for sort section*/
+/*form style*/
+.f1 {
+  background-color: rgb(238, 237, 237);
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  justify-content: center;
+  padding: 2%;
+  margin: auto, 0;
 
-.sort {
-  color: var(--tertiary-color);
-  font-size: 1.5rem;
-  padding: 8%;
+  p {
+    color: var(--dark-grey);
+    font-weight: bold;
+
+
+
+  }
 }
 
-#sort {
-  color: var(--dark-grey);
-  padding: 1%;
-  font-size: 1.5rem;
+fieldset {
+  margin: 0, auto;
+
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-bottom: 20px;
+
+
+}
+
+.camp {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  color: var(--tertiary-color);
+  font-size: var(--large-font);
+
+  input {
+    height: 40px;
+    font-size: medium;
+  }
+}
+
+.sumary {
+  display: flex;
+  padding: 20px;
+
+  h3 {
+    margin-bottom: 40px;
+    margin-top: 20px;
+  }
+
+  h4 {
+    margin-bottom: 15px;
+
+    text-align: right;
+
+    span {
+      margin-left: 30px;
+      color: var(--secondary-color);
+      font-size: var(--large-font);
+
+    }
+  }
+
+  span {
+    align-content: 50px;
+  }
+
+}
+
+.submit {
+  font-size: var(--large-font);
+  color: var(--primary-color);
+  background-color: var(--dark-grey);
+  border-radius: 8px;
+  width: 50%;
+  height: 70px;
+  margin: auto;
+  box-shadow: 0 4px 10px var(--secondary-color);
 
 }
